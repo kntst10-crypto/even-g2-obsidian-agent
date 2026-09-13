@@ -1,0 +1,25 @@
+{
+  "package_id": "com.kentasato.vaultlens",
+  "edition": "202601",
+  "name": "Vault Lens",
+  "version": "0.2.0",
+  "min_app_version": "2.2.10",
+  "min_sdk_version": "0.0.15",
+  "entrypoint": "index.html",
+  "permissions": [
+    {
+      "name": "network",
+      "desc": "Connect to the fixed Vault Lens relay to search notes, prepare confirmed appends, and transcribe audio.",
+      "whitelist": [
+        "https://relay.example.invalid"
+      ]
+    },
+    {
+      "name": "g2-microphone",
+      "desc": "Record up to 30 seconds only after a tap. Audio is sent for transcription only after confirmation."
+    }
+  ],
+  "supported_languages": [
+    "ja"
+  ]
+}

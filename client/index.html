@@ -1,0 +1,10 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Vault Lens</title></head>
+<body><main>
+<header><span>VAULT LENS</span><h1>探す。話す。残す。</h1><p>Obsidian のノートを、目の前に。</p></header>
+<section><h2>PCと接続</h2><p>PCコネクターを起動し、表示された接続コードを入力してください。VaultはPCに置いたまま、必要な検索抜粋・入力だけをHTTPS中継で処理します。</p><label>接続コード<input id="code" autocomplete="off" placeholder="XXXXXX-XXXXXX-XXXXXX"></label><button id="pair">接続する</button><button id="revoke">接続解除</button><p id="paired"></p></section>
+<section><h2>AIの設定</h2><label>回答エンジン<select id="provider"><option value="local">検索抜粋のみ（回答AIなし）</option><option value="openai">OpenAI</option><option value="claude">Claude</option></select></label><p>音声入力はOpenAIへ送信して文字起こしします。録音後にグラス上で送信を確認できます。AI回答では質問・検索抜粋を選択した事業者へ送ります。</p></section>
+<section><h2>入力して操作</h2><label>検索語／追記内容<textarea id="input" rows="3" maxlength="4000"></textarea></label><div class="actions"><button id="search">検索</button><button id="ask">AI回答を確認</button><button id="inbox">Inboxへ追記提案</button><button id="daily">Dailyへ追記提案</button></div></section>
+<section><h2>G2表示</h2><pre id="screen" aria-live="polite">接続準備中…</pre><div class="actions"><button id="previous">↑ 前へ</button><button id="click">タップ／決定</button><button id="next">↓ 次へ</button><button id="back">戻る</button></div><p>G2：上下で選択、タップで決定。録音中はタップで停止。ダブルタップは戻る、ホームではシステム終了確認。</p></section>
+<p id="status" role="status"></p><footer>削除・上書き・外部送信の代行は行いません。追記は内容確認後のみ。PCの起動とインターネット接続が必要です。<br>音声・ノート本文は中継で恒久保存しません。AI提供元の取扱いはプライバシーポリシーをご確認ください。</footer>
+</main><script type="module" src="/main.js"></script></body></html>

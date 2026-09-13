@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: vault-lens-relay
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /health
+    numInstances: 1
+    envVars:
+      - key: RELAY_ORIGIN
+        sync: false
+      - key: CLIENT_ORIGINS
+        sync: false
+      - key: PUBLIC_PAIRING
+        value: "false"
+      - key: ONBOARDING_TOKEN
+        generateValue: true
+      - key: ALLOW_CLOUD
+        value: "false"
