@@ -11,7 +11,7 @@
       "name": "network",
       "desc": "Connect to the fixed Vault Lens relay to search notes, prepare confirmed appends, and transcribe audio.",
       "whitelist": [
-        "https://relay.example.invalid"
+        "https://even-g2-obsidian-relay.onrender.com"
       ]
     },
     {
