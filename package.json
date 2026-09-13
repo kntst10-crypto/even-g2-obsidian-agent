@@ -1,0 +1,28 @@
+{
+  "name": "g2-obsidian-agent",
+  "version": "0.2.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "start": "node --env-file-if-exists=.env src/server.mjs",
+    "relay": "node --env-file-if-exists=.env src/relay.mjs",
+    "connector": "node --env-file-if-exists=.env.connector src/connector.mjs",
+    "dev": "vite --host 127.0.0.1",
+    "build": "node scripts/manifest.mjs && vite build",
+    "pack": "npm run build && evenhub pack app.json dist --sdk-ver 0.0.15 -o vault-lens-dev.ehpk",
+    "test": "node --test",
+    "check": "node --check src/server.mjs && node --check src/vault.mjs && node --check src/providers.mjs && node --check src/relay.mjs && node --check src/connector.mjs && node --check src/transcribe.mjs && node --check src/g2-bridge.mjs && node --check client/main.js && node --check public/app.js"
+  },
+  "dependencies": {
+    "@evenrealities/even_hub_sdk": "0.0.15"
+  },
+  "devDependencies": {
+    "@evenrealities/evenhub-cli": "0.1.14",
+    "@evenrealities/evenhub-simulator": "0.9.5",
+    "typescript": "5.9.3",
+    "vite": "8.3.0"
+  }
+}
